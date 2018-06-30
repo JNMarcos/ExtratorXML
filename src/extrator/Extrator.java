@@ -15,17 +15,16 @@ import java.io.IOException;
  *
  */
 public class Extrator {
-
 	public static String NOME_USUARIO = "JN Marcos";
 	public static int NUMERO_PASTAS = 2;
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
 		String caminhos[] = new String[NUMERO_PASTAS];
 		caminhos[0] = "C:\\Users\\" + NOME_USUARIO + "\\Documents\\Stanford\\";
 		caminhos[1] = "C:\\Users\\" + NOME_USUARIO + "\\Documents\\Spacy\\";
+		
 		
 		//"Cria-se" os Files que apontam para as pastas dos outputs
 		File pastas[] = new File[NUMERO_PASTAS];
@@ -36,9 +35,10 @@ public class Extrator {
 		
 		//Arquivo de leitura a partir do caminhoTemporario (string)
 		FileReader[] fr = null;
+		fr = new FileReader[NUMERO_PASTAS];
 		BufferedReader[] br = null;
+		br  = new BufferedReader[NUMERO_PASTAS];
 
-		BufferedReader ba = null;
 
 		String linha;
 		String resultado[] = new String[NUMERO_PASTAS];
@@ -59,8 +59,6 @@ public class Extrator {
 		String caminhoLeitura = "";
 		File f = null;
 		
-		fr = new FileReader[NUMERO_PASTAS];
-		br  = new BufferedReader[NUMERO_PASTAS];
 		
 		//Lê-se a primeira linha		
 		for (int i = 0; i < caminhos.length; i++) {
