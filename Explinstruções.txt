@@ -14,3 +14,32 @@ O último caminho indica a pasta de resultado, onde será armazenado os arquivos
 caminhos[2] = "C:\\Users\\" + NOME_USUARIO + CAMINHO_PASTAS + "Resultados\\";
 
 Sabido disso, basta executar o projeto.
+
+OBS.: Crie arquivos para cada ferramenta em pastas separadas, dê o mesmo nome para o arquivo na outra pasta correspondente, com o mesmo número de frases computadas. Se tiver 10 frases em output1.txt na pasta  Stanford deve ter um arquivo chamado output1.txt com 10 frases na pasta Spacy. Cada um com os resultados na sua devida formatação (ou seja, não alterar, o programa deve reconhecer automaticamente). 
+
+Formatação Stanford:
+Sentence #1 (10 tokens):
+For the results, term weight learning is performed.
+
+Tokens:
+[Text=For CharacterOffsetBegin=0 CharacterOffsetEnd=3 PartOfSpeech=IN Lemma=for NamedEntityTag=O]
+[Text=the CharacterOffsetBegin=4 CharacterOffsetEnd=7 PartOfSpeech=DT Lemma=the NamedEntityTag=O]
+[Text=results CharacterOffsetBegin=8 CharacterOffsetEnd=15 PartOfSpeech=NNS Lemma=result NamedEntityTag=O]
+[Text=, CharacterOffsetBegin=15 CharacterOffsetEnd=16 PartOfSpeech=, Lemma=, NamedEntityTag=O]
+...
+
+Extracted the following NER entity mentions:
+
+Formatação Spacy:
+(u'For', u'ADP', u'prep', 16037325823156266367L, 0L)
+(u'the', u'DET', u'det', 7425985699627899538L, 0L)
+(u'results', u'NOUN', u'pobj', 16479863421078305451L, 0L)
+(u',', u'PUNCT', u'punct', 2593208677638477497L, 0L)
+(u'term', u'NOUN', u'compound', 4519742297340331040L, 0L)
+(u'weight', u'NOUN', u'compound', 4121829478905990290L, 0L)
+(u'learning', u'NOUN', u'nsubjpass', 7342778914265824300L, 0L)
+(u'is', u'VERB', u'auxpass', 10382539506755952630L, 0L)
+(u'performed', u'VERB', u'ROOT', 2369620111149368749L, 0L)
+(u'.', u'PUNCT', u'punct', 12646065887601541794L, 0L)
+(u'the results', u'results', u'pobj', u'For')
+(u'term weight learning', u'learning', u'nsubjpass', u'performed')
