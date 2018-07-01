@@ -4,10 +4,12 @@
 package extrator;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,38 +21,49 @@ import java.util.List;
 public class Extrator {
 	//nome do usuário no computador
 	public static String NOME_USUARIO = "JN Marcos";
-	public static int NUMERO_PASTAS = 2;
+	public static String CAMINHO_PASTAS = "\\Documents\\";
+	public static int NUMERO_FERRAMENTAS = 2;
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String caminhos[] = new String[NUMERO_PASTAS];
+		String caminhos[] = new String[NUMERO_FERRAMENTAS + 1];
 		
 		//crie arquivos para cada ferramenta em pastas separadas
 		//dê o mesmo nome para o arquivo na outra pasta correspondente, com
 		//o mesmo número de frases. Se tiver 10 frases em output1.txt em Stanford
 		//deve ter um arquivo chamado output1.txt com 10 frases em Spacy
 		//cada um com os resultados na sua devida formatação
-		caminhos[0] = "C:\\Users\\" + NOME_USUARIO + "\\Documents\\Stanford\\";
-		caminhos[1] = "C:\\Users\\" + NOME_USUARIO + "\\Documents\\Spacy\\";
+		caminhos[0] = "C:\\Users\\" + NOME_USUARIO + CAMINHO_PASTAS + "Stanford\\";
+		caminhos[1] = "C:\\Users\\" + NOME_USUARIO + CAMINHO_PASTAS + "Spacy\\";
+		caminhos[2] = "C:\\Users\\" + NOME_USUARIO + CAMINHO_PASTAS + "Resultados\\";
 
-
+		
 		//"Cria-se" os Files que apontam para as pastas dos outputs
-		File pastas[] = new File[NUMERO_PASTAS];
+		File pastas[] = new File[NUMERO_FERRAMENTAS + 1];
 		pastas[0] = new File(caminhos[0]);
 		pastas[1] = new File(caminhos[1]);
+		pastas[2] = new File(caminhos[2]);
+		
+		if (!pastas[NUMERO_FERRAMENTAS].exists()){ //Se pasta de resultados não existe, cria
+			pastas[NUMERO_FERRAMENTAS].mkdir();
+		}
 
 		File[] arquivos;
 
 		//Arquivo de leitura a partir do caminhoTemporario (string)
 		FileReader[] fr = null;
-		fr = new FileReader[NUMERO_PASTAS];
+		fr = new FileReader[NUMERO_FERRAMENTAS];
 		BufferedReader[] br = null;
-		br  = new BufferedReader[NUMERO_PASTAS];
+		br  = new BufferedReader[NUMERO_FERRAMENTAS];
 
+		
+		FileWriter fw = null;
+		BufferedWriter bw = null;
 
 		String linha;
-		String resultado[] = new String[NUMERO_PASTAS];
+		String resultado[] = new String[NUMERO_FERRAMENTAS];
+		String documento = "";
 
 
 		//Conjunto de SOMENTE arquivos de uma pasta com outputs a serem limpos
@@ -71,7 +84,7 @@ public class Extrator {
 		List<Sentenca> s = null;
 		//Lê-se a primeira linha
 		for (int j = 0; j < arquivos.length; j++){
-			for (int i = 0; i < caminhos.length; i++) {
+			for (int i = 0; i < NUMERO_FERRAMENTAS; i++) {
 				nomeArquivo = arquivos[j].getName();
 
 				caminhoLeitura = caminhos[i] + nomeArquivo;
@@ -112,8 +125,20 @@ public class Extrator {
 				}
 
 			}
+			documento = XML(s, nomeArquivo);
+			
+			System.out.println(documento);
+			
+			try {
+				fw = new FileWriter(new File(caminhos[NUMERO_FERRAMENTAS] + nomeArquivo + ".xml"));
+				bw = new BufferedWriter(fw);
+				bw.write(documento);
+				bw.flush();
+				bw.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 
-			System.out.println(XML(s, nomeArquivo));
 		}
 
 
@@ -143,7 +168,7 @@ public class Extrator {
 		return t.toArray(new String[t.size()]);
 	}
 	
-	public static String segmentacaoSpacy(String texto, List<Sentenca> s) {
+	public static void segmentacaoSpacy(String texto, List<Sentenca> s) {
 		texto = texto.replace("ï»¿", "");
 		String[] sentencas = texto.split("\\Q)\\E  ");
 		String[] tokens;
@@ -185,8 +210,6 @@ public class Extrator {
 			}
 			s.get(i).setChunks(chunkList);
 		}
-
-		return "";
 	}
 
 	public static List<Sentenca> segmentacaoStanford(String texto) {
