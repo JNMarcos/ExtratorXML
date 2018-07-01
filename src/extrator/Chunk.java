@@ -57,7 +57,7 @@ public class Chunk {
 		String[] tokens = texto.split(" ");
 		String t = "";
 		for(int i = 0; i < tokens.length; i++) {
-			t += "<token t_id=\"t_" + "TEM QUE ACHAR UMA MANEIRA" + "\" string=\"" + tokens[i] + "\"/>\n";
+			t += "<token t_id=\"t_" + indicesTokens.get(i) + "\" string=\"" + tokens[i] + "\"/>\n";
 		}
 		chunk+= t + "</tokens>\n</chunking>\n";
 		return chunk;
