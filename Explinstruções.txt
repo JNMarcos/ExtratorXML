@@ -1,0 +1,16 @@
+﻿A variável NOME_USUARIO indica o nome de seu computador. Altere-a para a forma que seu computador é chamado.
+public static String NOME_USUARIO = "nomeComputadorAqui";
+
+A variável NUMERO_FERRAMENTAS indica o número de ferramentas diferentes usadas. Como até o momento só há extração de informação para o Spacy e Stanford, o seu valor é 2.
+public static int NUMERO_FERRAMENTAS = 2;
+
+A variável CAMINHO_PASTAS indica a pasta que os documentos de saída de cada ferramenta estão a partir do NOME_USUARIO (que constrói um caminho). 
+public static String CAMINHO_PASTAS = "\\Documents\\";
+
+Logo, o caminho para a pasta de saída do Stanford deve ficar algo parecido a isso:
+caminhos[0] = "C:\\Users\\" + NOME_USUARIO + CAMINHO_PASTAS + "Stanford\\";
+
+O último caminho indica a pasta de resultado, onde será armazenado os arquivos .XML:
+caminhos[2] = "C:\\Users\\" + NOME_USUARIO + CAMINHO_PASTAS + "Resultados\\";
+
+Sabido disso, basta executar o projeto.
