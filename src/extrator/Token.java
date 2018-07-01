@@ -16,9 +16,10 @@ public class Token {
 	private String POS;
 	private String lema;
 	private String NER;
+	private String ckOt;
+	private String tipo = "";	
 	
-	
-	
+
 	public Token(String idSentenca, String idToken) {
 		super();
 		this.idSentenca = idSentenca;
@@ -60,13 +61,38 @@ public class Token {
 	public void setNER(String nER) {
 		NER = nER;
 	}
+	public String getIdSentenca() {
+		return idSentenca;
+	}
+	public void setIdSentenca(String idSentenca) {
+		this.idSentenca = idSentenca;
+	}
+	public String getIdToken() {
+		return idToken;
+	}
+	public void setIdToken(String idToken) {
+		this.idToken = idToken;
+	}
+	public String getCkOt() {
+		return ckOt;
+	}
+	public void setCkOt(String ckOt) {
+		this.ckOt = ckOt;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+	
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((NER == null) ? 0 : NER.hashCode());
-		result = prime * result + ((POS == null) ? 0 : POS.hashCode());
-		result = prime * result + ((lema == null) ? 0 : lema.hashCode());
+		result = prime * result + ((idSentenca == null) ? 0 : idSentenca.hashCode());
+		result = prime * result + ((idToken == null) ? 0 : idToken.hashCode());
 		result = prime * result + ((texto == null) ? 0 : texto.hashCode());
 		return result;
 	}
@@ -79,24 +105,15 @@ public class Token {
 		if (getClass() != obj.getClass())
 			return false;
 		Token other = (Token) obj;
-		if (NER == null) {
-			if (other.NER != null)
+		if (idSentenca == null) {
+			if (other.idSentenca != null)
 				return false;
-		} else if (!NER.equals(other.NER))
+		} else if (!idSentenca.equals(other.idSentenca))
 			return false;
-		if (POS == null) {
-			if (other.POS != null)
+		if (idToken == null) {
+			if (other.idToken != null)
 				return false;
-		} else if (!POS.equals(other.POS))
-			return false;
-		if (charOffsetBegin != other.charOffsetBegin)
-			return false;
-		if (charOffsetEnd != other.charOffsetEnd)
-			return false;
-		if (lema == null) {
-			if (other.lema != null)
-				return false;
-		} else if (!lema.equals(other.lema))
+		} else if (!idToken.equals(other.idToken))
 			return false;
 		if (texto == null) {
 			if (other.texto != null)
@@ -105,14 +122,13 @@ public class Token {
 			return false;
 		return true;
 	}
-	
 	//retorna 
 	@Override
 	public String toString() {
 		String orth = Character.isUpperCase(texto.charAt(0))? "UpperInitial":"LowerCase";
-		return "<token s_id=\"s_" + idSentenca + "\" type=\"" + "XXXXX" + "\" t_id=\"t_" + idToken + "\" string=\"" 
+		return "<token s_id=\"s_" + idSentenca + "\" type=\"" + tipo + "\" t_id=\"t_" + idToken + "\" string=\"" 
 			+ texto + "\" stem=\"" + texto.toLowerCase() + "\" start=\"" + charOffsetBegin + "\" pos=\"" + POS + "\" orth=\"" + orth +
-			"\" length=\"" + texto.length() + "\" end=\"" + charOffsetEnd + "\" ck_ot=\"" + "ZZZZZ" + "\"/>\n";
+			"\" length=\"" + texto.length() + "\" end=\"" + charOffsetEnd + "\" ck_ot=\"" + ckOt + "\"/>\n";
 	}
 	
 	

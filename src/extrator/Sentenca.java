@@ -12,6 +12,7 @@ import java.util.List;
 public class Sentenca {
 	private String texto;
 	private List<Token> tokens;
+	private List<Chunk> chunks;
 	
 	public Sentenca(String texto) {
 		super();
@@ -31,6 +32,14 @@ public class Sentenca {
 		this.tokens = tokens;
 	}
 	
+	public List<Chunk> getChunks() {
+		return chunks;
+	}
+
+	public void setChunks(List<Chunk> chunks) {
+		this.chunks = chunks;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
