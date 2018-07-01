@@ -248,7 +248,7 @@ public class Extrator {
 	public static String XML(List<Sentenca> s, String nomeArquivo) {
 		String XML = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n" + 
 				"\r\n" + 
-				"-<doc filename=\"" + nomeArquivo +  ".xml\">\r\n" + 
+				"<doc filename=\"" + nomeArquivo +  ".xml\">\r\n" + 
 				"\r\n" + "\r\n" + "<sentences>" + "\r\n";
 
 		String textoIntermediario = "";
