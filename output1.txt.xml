@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+-<doc filename="output1.txt.xml">
+
+
+<sentences>
+<sentence text="For the results, term weight learning is performed." s_id="1" has_ne="TEM DE VER COMO PEGAR ESSA INFO DEPOIS">
+<token s_id="s_1" type="prep" t_id="t_1" string="For" stem="for" start="0" pos="IN" orth="UpperInitial" length="3" end="3" ck_ot="ADP"/>
+<token s_id="s_1" type="det" t_id="t_2" string="the" stem="the" start="4" pos="DT" orth="LowerCase" length="3" end="7" ck_ot="DET"/>
+<token s_id="s_1" type="pobj" t_id="t_3" string="results" stem="results" start="8" pos="NNS" orth="LowerCase" length="7" end="15" ck_ot="NOUN"/>
+<token s_id="s_1" type="punct" t_id="t_4" string="," stem="," start="15" pos="," orth="LowerCase" length="1" end="16" ck_ot="PUNCT"/>
+<token s_id="s_1" type="compound" t_id="t_5" string="term" stem="term" start="17" pos="NN" orth="LowerCase" length="4" end="21" ck_ot="NOUN"/>
+<token s_id="s_1" type="compound" t_id="t_6" string="weight" stem="weight" start="22" pos="NN" orth="LowerCase" length="6" end="28" ck_ot="NOUN"/>
+<token s_id="s_1" type="nsubjpass" t_id="t_7" string="learning" stem="learning" start="29" pos="NN" orth="LowerCase" length="8" end="37" ck_ot="NOUN"/>
+<token s_id="s_1" type="auxpass" t_id="t_8" string="is" stem="is" start="38" pos="VBZ" orth="LowerCase" length="2" end="40" ck_ot="VERB"/>
+<token s_id="s_1" type="ROOT" t_id="t_9" string="performed" stem="performed" start="41" pos="VBN" orth="LowerCase" length="9" end="50" ck_ot="VERB"/>
+<token s_id="s_1" type="punct" t_id="t_10" string="." stem="." start="50" pos="." orth="LowerCase" length="1" end="51" ck_ot="PUNCT"/>
+
+<chunkings>
+<chunkig text="the results" s_id="1" type="vp" ck_id="1" >
+<tokens>
+<token t_id="t_2" string="the"/>
+<token t_id="t_3" string="results"/>
+</tokens>
+</chunking>
+<chunkig text="term weight learning" s_id="1" type="np" ck_id="2" >
+<tokens>
+<token t_id="t_5" string="term"/>
+<token t_id="t_6" string="weight"/>
+<token t_id="t_7" string="learning"/>
+</tokens>
+</chunking>
+</chunkings>
+</sentence>
+<sentence text="The results of experiment demonstrate the effectiveness of the 0,00." s_id="2" has_ne="TEM DE VER COMO PEGAR ESSA INFO DEPOIS">
+<token s_id="s_2" type="det" t_id="t_1" string="The" stem="the" start="0" pos="DT" orth="UpperInitial" length="3" end="3" ck_ot="DET"/>
+<token s_id="s_2" type="nsubj" t_id="t_2" string="results" stem="results" start="4" pos="NNS" orth="LowerCase" length="7" end="11" ck_ot="NOUN"/>
+<token s_id="s_2" type="prep" t_id="t_3" string="of" stem="of" start="12" pos="IN" orth="LowerCase" length="2" end="14" ck_ot="ADP"/>
+<token s_id="s_2" type="pobj" t_id="t_4" string="experiment" stem="experiment" start="15" pos="NN" orth="LowerCase" length="10" end="25" ck_ot="NOUN"/>
+<token s_id="s_2" type="ROOT" t_id="t_5" string="demonstrate" stem="demonstrate" start="26" pos="VBP" orth="LowerCase" length="11" end="37" ck_ot="VERB"/>
+<token s_id="s_2" type="det" t_id="t_6" string="the" stem="the" start="38" pos="DT" orth="LowerCase" length="3" end="41" ck_ot="DET"/>
+<token s_id="s_2" type="dobj" t_id="t_7" string="effectiveness" stem="effectiveness" start="42" pos="NN" orth="LowerCase" length="13" end="55" ck_ot="NOUN"/>
+<token s_id="s_2" type="prep" t_id="t_8" string="of" stem="of" start="56" pos="IN" orth="LowerCase" length="2" end="58" ck_ot="ADP"/>
+<token s_id="s_2" type="det" t_id="t_9" string="the" stem="the" start="59" pos="DT" orth="LowerCase" length="3" end="62" ck_ot="DET"/>
+<token s_id="s_2" type="pobj" t_id="t_10" string="method" stem="method" start="63" pos="NN" orth="LowerCase" length="6" end="69" ck_ot="NOUN"/>
+<token s_id="s_2" type="punct" t_id="t_11" string="." stem="." start="69" pos="." orth="LowerCase" length="1" end="70" ck_ot="PUNCT"/>
+
+<chunkings>
+<chunkig text="The results" s_id="2" type="np" ck_id="1" >
+<tokens>
+<token t_id="t_1" string="The"/>
+<token t_id="t_2" string="results"/>
+</tokens>
+</chunking>
+<chunkig text="experiment" s_id="2" type="vp" ck_id="2" >
+<tokens>
+<token t_id="t_4" string="experiment"/>
+</tokens>
+</chunking>
+<chunkig text="the effectiveness" s_id="2" type="vp" ck_id="3" >
+<tokens>
+<token t_id="t_6" string="the"/>
+<token t_id="t_7" string="effectiveness"/>
+</tokens>
+</chunking>
+<chunkig text="the method" s_id="2" type="vp" ck_id="4" >
+<tokens>
+<token t_id="t_6" string="the"/>
+<token t_id="t_9" string="method"/>
+</tokens>
+</chunking>
+</chunkings>
+</sentence>
+<sentence text="This paper describes unsupervised learning algorithm for disambiguating verbal word senses using term weight learning." s_id="3" has_ne="TEM DE VER COMO PEGAR ESSA INFO DEPOIS">
+<token s_id="s_3" type="det" t_id="t_1" string="This" stem="this" start="0" pos="DT" orth="UpperInitial" length="4" end="4" ck_ot="DET"/>
+<token s_id="s_3" type="nsubj" t_id="t_2" string="paper" stem="paper" start="5" pos="NN" orth="LowerCase" length="5" end="10" ck_ot="NOUN"/>
+<token s_id="s_3" type="ROOT" t_id="t_3" string="describes" stem="describes" start="11" pos="VBZ" orth="LowerCase" length="9" end="20" ck_ot="VERB"/>
+<token s_id="s_3" type="acomp" t_id="t_4" string="unsupervised" stem="unsupervised" start="21" pos="JJ" orth="LowerCase" length="12" end="33" ck_ot="ADJ"/>
+<token s_id="s_3" type="xcomp" t_id="t_5" string="learning" stem="learning" start="34" pos="NN" orth="LowerCase" length="8" end="42" ck_ot="VERB"/>
+<token s_id="s_3" type="dobj" t_id="t_6" string="algorithm" stem="algorithm" start="43" pos="NN" orth="LowerCase" length="9" end="52" ck_ot="NOUN"/>
+<token s_id="s_3" type="prep" t_id="t_7" string="for" stem="for" start="53" pos="IN" orth="LowerCase" length="3" end="56" ck_ot="ADP"/>
+<token s_id="s_3" type="pcomp" t_id="t_8" string="disambiguating" stem="disambiguating" start="57" pos="VBG" orth="LowerCase" length="14" end="71" ck_ot="VERB"/>
+<token s_id="s_3" type="amod" t_id="t_9" string="verbal" stem="verbal" start="72" pos="JJ" orth="LowerCase" length="6" end="78" ck_ot="ADJ"/>
+<token s_id="s_3" type="compound" t_id="t_10" string="word" stem="word" start="79" pos="NN" orth="LowerCase" length="4" end="83" ck_ot="NOUN"/>
+<token s_id="s_3" type="dobj" t_id="t_11" string="senses" stem="senses" start="84" pos="NNS" orth="LowerCase" length="6" end="90" ck_ot="NOUN"/>
+<token s_id="s_3" type="acl" t_id="t_12" string="using" stem="using" start="91" pos="VBG" orth="LowerCase" length="5" end="96" ck_ot="VERB"/>
+<token s_id="s_3" type="compound" t_id="t_13" string="term" stem="term" start="97" pos="NN" orth="LowerCase" length="4" end="101" ck_ot="NOUN"/>
+<token s_id="s_3" type="compound" t_id="t_14" string="weight" stem="weight" start="102" pos="NN" orth="LowerCase" length="6" end="108" ck_ot="NOUN"/>
+<token s_id="s_3" type="dobj" t_id="t_15" string="learning" stem="learning" start="109" pos="NN" orth="LowerCase" length="8" end="117" ck_ot="NOUN"/>
+<token s_id="s_3" type="punct" t_id="t_16" string="." stem="." start="117" pos="." orth="LowerCase" length="1" end="118" ck_ot="PUNCT"/>
+
+<chunkings>
+<chunkig text="This paper" s_id="3" type="np" ck_id="1" >
+<tokens>
+<token t_id="t_1" string="This"/>
+<token t_id="t_2" string="paper"/>
+</tokens>
+</chunking>
+<chunkig text="algorithm" s_id="3" type="vp" ck_id="2" >
+<tokens>
+<token t_id="t_6" string="algorithm"/>
+</tokens>
+</chunking>
+<chunkig text="verbal word senses" s_id="3" type="vp" ck_id="3" >
+<tokens>
+<token t_id="t_9" string="verbal"/>
+<token t_id="t_10" string="word"/>
+<token t_id="t_11" string="senses"/>
+</tokens>
+</chunking>
+<chunkig text="term weight learning" s_id="3" type="vp" ck_id="4" >
+<tokens>
+<token t_id="t_5" string="term"/>
+<token t_id="t_13" string="weight"/>
+<token t_id="t_14" string="learning"/>
+</tokens>
+</chunking>
+</chunkings>
+</sentence>
+<sentence text="In our method, collocations which characterise every sense are extracted using similarity-based estimation." s_id="4" has_ne="TEM DE VER COMO PEGAR ESSA INFO DEPOIS">
+<token s_id="s_4" type="prep" t_id="t_1" string="In" stem="in" start="0" pos="IN" orth="UpperInitial" length="2" end="2" ck_ot="ADP"/>
+<token s_id="s_4" type="poss" t_id="t_2" string="our" stem="our" start="3" pos="PRP$" orth="LowerCase" length="3" end="6" ck_ot="ADJ"/>
+<token s_id="s_4" type="pobj" t_id="t_3" string="method" stem="method" start="7" pos="NN" orth="LowerCase" length="6" end="13" ck_ot="NOUN"/>
+<token s_id="s_4" type="punct" t_id="t_4" string="," stem="," start="13" pos="," orth="LowerCase" length="1" end="14" ck_ot="PUNCT"/>
+<token s_id="s_4" type="nsubjpass" t_id="t_5" string="collocations" stem="collocations" start="15" pos="NNS" orth="LowerCase" length="12" end="27" ck_ot="NOUN"/>
+<token s_id="s_4" type="nsubj" t_id="t_6" string="which" stem="which" start="28" pos="WDT" orth="LowerCase" length="5" end="33" ck_ot="ADJ"/>
+<token s_id="s_4" type="relcl" t_id="t_7" string="characterise" stem="characterise" start="34" pos="VBP" orth="LowerCase" length="12" end="46" ck_ot="VERB"/>
+<token s_id="s_4" type="det" t_id="t_8" string="every" stem="every" start="47" pos="DT" orth="LowerCase" length="5" end="52" ck_ot="DET"/>
+<token s_id="s_4" type="dobj" t_id="t_9" string="sense" stem="sense" start="53" pos="NN" orth="LowerCase" length="5" end="58" ck_ot="NOUN"/>
+<token s_id="s_4" type="auxpass" t_id="t_10" string="are" stem="are" start="59" pos="VBP" orth="LowerCase" length="3" end="62" ck_ot="VERB"/>
+<token s_id="s_4" type="ROOT" t_id="t_11" string="extracted" stem="extracted" start="63" pos="VBN" orth="LowerCase" length="9" end="72" ck_ot="VERB"/>
+<token s_id="s_4" type="advcl" t_id="t_12" string="using" stem="using" start="73" pos="VBG" orth="LowerCase" length="5" end="78" ck_ot="VERB"/>
+<token s_id="s_4" type="npadvmod" t_id="t_13" string="similarity-based" stem="similarity-based" start="79" pos="JJ" orth="LowerCase" length="16" end="95" ck_ot="NOUN"/>
+<token s_id="s_4" type="dobj" t_id="t_14" string="estimation" stem="estimation" start="96" pos="NN" orth="LowerCase" length="10" end="106" ck_ot="NOUN"/>
+<token s_id="s_4" type="punct" t_id="t_15" string="." stem="." start="106" pos="." orth="LowerCase" length="1" end="107" ck_ot="PUNCT"/>
+
+<chunkings>
+<chunkig text="our method" s_id="4" type="vp" ck_id="1" >
+<tokens>
+<token t_id="t_2" string="our"/>
+<token t_id="t_3" string="method"/>
+</tokens>
+</chunking>
+<chunkig text="collocations" s_id="4" type="np" ck_id="2" >
+<tokens>
+<token t_id="t_5" string="collocations"/>
+</tokens>
+</chunking>
+<chunkig text="every sense" s_id="4" type="vp" ck_id="3" >
+<tokens>
+<token t_id="t_8" string="every"/>
+<token t_id="t_9" string="sense"/>
+</tokens>
+</chunking>
+<chunkig text="similarity-based estimation" s_id="4" type="vp" ck_id="4" >
+<tokens>
+<token t_id="t_13" string="similarity-based"/>
+<token t_id="t_14" string="estimation"/>
+</tokens>
+</chunking>
+</chunkings>
+</sentence>
+<sentence text="To identify active region arguments,this paper models Maximal Projection (MP), which is a concept in D-structure from the projection principle of the Principle and Parameters theory." s_id="5" has_ne="TEM DE VER COMO PEGAR ESSA INFO DEPOIS">
+<token s_id="s_5" type="aux" t_id="t_1" string="To" stem="to" start="0" pos="TO" orth="UpperInitial" length="2" end="2" ck_ot="PART"/>
+<token s_id="s_5" type="advcl" t_id="t_2" string="identify" stem="identify" start="3" pos="VB" orth="LowerCase" length="8" end="11" ck_ot="VERB"/>
+<token s_id="s_5" type="amod" t_id="t_3" string="active" stem="active" start="12" pos="JJ" orth="LowerCase" length="6" end="18" ck_ot="ADJ"/>
+<token s_id="s_5" type="compound" t_id="t_4" string="region" stem="region" start="19" pos="NN" orth="LowerCase" length="6" end="25" ck_ot="NOUN"/>
+<token s_id="s_5" type="dobj" t_id="t_5" string="arguments" stem="arguments" start="26" pos="NNS" orth="LowerCase" length="9" end="35" ck_ot="NOUN"/>
+<token s_id="s_5" type="punct" t_id="t_6" string="," stem="," start="35" pos="," orth="LowerCase" length="1" end="36" ck_ot="PUNCT"/>
+<token s_id="s_5" type="det" t_id="t_7" string="this" stem="this" start="36" pos="DT" orth="LowerCase" length="4" end="40" ck_ot="DET"/>
+<token s_id="s_5" type="compound" t_id="t_8" string="paper" stem="paper" start="41" pos="NN" orth="LowerCase" length="5" end="46" ck_ot="NOUN"/>
+<token s_id="s_5" type="ROOT" t_id="t_9" string="models" stem="models" start="47" pos="NNS" orth="LowerCase" length="6" end="53" ck_ot="NOUN"/>
+<token s_id="s_5" type="compound" t_id="t_10" string="Maximal" stem="maximal" start="54" pos="JJ" orth="UpperInitial" length="7" end="61" ck_ot="PROPN"/>
+<token s_id="s_5" type="appos" t_id="t_11" string="Projection" stem="projection" start="62" pos="NN" orth="UpperInitial" length="10" end="72" ck_ot="PROPN"/>
+<token s_id="s_5" type="punct" t_id="t_12" string="-LRB-" stem="-lrb-" start="73" pos="-LRB-" orth="LowerCase" length="5" end="74" ck_ot="PUNCT"/>
+<token s_id="s_5" type="appos" t_id="t_13" string="MP" stem="mp" start="74" pos="NN" orth="UpperInitial" length="2" end="76" ck_ot="PROPN"/>
+<token s_id="s_5" type="punct" t_id="t_14" string="-RRB-" stem="-rrb-" start="76" pos="-RRB-" orth="LowerCase" length="5" end="77" ck_ot="PUNCT"/>
+<token s_id="s_5" type="punct" t_id="t_15" string="," stem="," start="77" pos="," orth="LowerCase" length="1" end="78" ck_ot="PUNCT"/>
+<token s_id="s_5" type="nsubj" t_id="t_16" string="which" stem="which" start="79" pos="WDT" orth="LowerCase" length="5" end="84" ck_ot="ADJ"/>
+<token s_id="s_5" type="relcl" t_id="t_17" string="is" stem="is" start="85" pos="VBZ" orth="LowerCase" length="2" end="87" ck_ot="VERB"/>
+<token s_id="s_5" type="det" t_id="t_18" string="a" stem="a" start="88" pos="DT" orth="LowerCase" length="1" end="89" ck_ot="DET"/>
+<token s_id="s_5" type="attr" t_id="t_19" string="concept" stem="concept" start="90" pos="NN" orth="LowerCase" length="7" end="97" ck_ot="NOUN"/>
+<token s_id="s_5" type="prep" t_id="t_20" string="in" stem="in" start="98" pos="IN" orth="LowerCase" length="2" end="100" ck_ot="ADP"/>
+<token s_id="s_5" type="compound" t_id="t_21" string="D-structure" stem="d-structure" start="101" pos="NN" orth="UpperInitial" length="11" end="112" ck_ot="NOUN"/>
+<token s_id="s_5" type="prep" t_id="t_22" string="from" stem="from" start="113" pos="IN" orth="LowerCase" length="4" end="117" ck_ot="ADP"/>
+<token s_id="s_5" type="det" t_id="t_23" string="the" stem="the" start="118" pos="DT" orth="LowerCase" length="3" end="121" ck_ot="DET"/>
+<token s_id="s_5" type="compound" t_id="t_24" string="projection" stem="projection" start="122" pos="NN" orth="LowerCase" length="10" end="132" ck_ot="NOUN"/>
+<token s_id="s_5" type="pobj" t_id="t_25" string="principle" stem="principle" start="133" pos="NN" orth="LowerCase" length="9" end="142" ck_ot="NOUN"/>
+<token s_id="s_5" type="prep" t_id="t_26" string="of" stem="of" start="143" pos="IN" orth="LowerCase" length="2" end="145" ck_ot="ADP"/>
+<token s_id="s_5" type="det" t_id="t_27" string="the" stem="the" start="146" pos="DT" orth="LowerCase" length="3" end="149" ck_ot="DET"/>
+<token s_id="s_5" type="nmod" t_id="t_28" string="Principle" stem="principle" start="150" pos="NNP" orth="UpperInitial" length="9" end="159" ck_ot="PROPN"/>
+<token s_id="s_5" type="cc" t_id="t_29" string="and" stem="and" start="160" pos="CC" orth="LowerCase" length="3" end="163" ck_ot="CCONJ"/>
+<token s_id="s_5" type="conj" t_id="t_30" string="Parameters" stem="parameters" start="164" pos="NNP" orth="UpperInitial" length="10" end="174" ck_ot="NOUN"/>
+<token s_id="s_5" type="pobj" t_id="t_31" string="theory" stem="theory" start="175" pos="NN" orth="LowerCase" length="6" end="181" ck_ot="NOUN"/>
+<token s_id="s_5" type="punct" t_id="t_32" string="." stem="." start="181" pos="." orth="LowerCase" length="1" end="182" ck_ot="PUNCT"/>
+
+<chunkings>
+<chunkig text="active region arguments" s_id="5" type="vp" ck_id="1" >
+<tokens>
+<token t_id="t_3" string="active"/>
+<token t_id="t_4" string="region"/>
+<token t_id="t_5" string="arguments"/>
+</tokens>
+</chunking>
+<chunkig text="Maximal Projection" s_id="5" type="vp" ck_id="2" >
+<tokens>
+<token t_id="t_10" string="Maximal"/>
+<token t_id="t_11" string="Projection"/>
+</tokens>
+</chunking>
+<chunkig text="MP" s_id="5" type="vp" ck_id="3" >
+<tokens>
+<token t_id="t_13" string="MP"/>
+</tokens>
+</chunking>
+<chunkig text="a concept" s_id="5" type="vp" ck_id="4" >
+<tokens>
+<token t_id="t_18" string="a"/>
+<token t_id="t_19" string="concept"/>
+</tokens>
+</chunking>
+<chunkig text="D-structure" s_id="5" type="vp" ck_id="5" >
+<tokens>
+<token t_id="t_21" string="D-structure"/>
+</tokens>
+</chunking>
+<chunkig text="the projection principle" s_id="5" type="vp" ck_id="6" >
+<tokens>
+<token t_id="t_20" string="the"/>
+<token t_id="t_23" string="projection"/>
+<token t_id="t_24" string="principle"/>
+</tokens>
+</chunking>
+<chunkig text="the Principle and Parameters theory" s_id="5" type="vp" ck_id="7" >
+<tokens>
+<token t_id="t_18" string="the"/>
+<token t_id="t_20" string="Principle"/>
+<token t_id="t_23" string="and"/>
+<token t_id="t_27" string="Parameters"/>
+<token t_id="t_28" string="theory"/>
+</tokens>
+</chunking>
+</chunkings>
+</sentence>
+<sentence text="As the number of necessary bilingual dictionaries is a quadratic function of the number of languages considered, we will face the problem of getting a large number of dictionaries." s_id="6" has_ne="TEM DE VER COMO PEGAR ESSA INFO DEPOIS">
+<token s_id="s_6" type="mark" t_id="t_1" string="As" stem="as" start="0" pos="IN" orth="UpperInitial" length="2" end="2" ck_ot="ADP"/>
+<token s_id="s_6" type="det" t_id="t_2" string="the" stem="the" start="3" pos="DT" orth="LowerCase" length="3" end="6" ck_ot="DET"/>
+<token s_id="s_6" type="nsubj" t_id="t_3" string="number" stem="number" start="7" pos="NN" orth="LowerCase" length="6" end="13" ck_ot="NOUN"/>
+<token s_id="s_6" type="prep" t_id="t_4" string="of" stem="of" start="14" pos="IN" orth="LowerCase" length="2" end="16" ck_ot="ADP"/>
+<token s_id="s_6" type="amod" t_id="t_5" string="necessary" stem="necessary" start="17" pos="JJ" orth="LowerCase" length="9" end="26" ck_ot="ADJ"/>
+<token s_id="s_6" type="amod" t_id="t_6" string="bilingual" stem="bilingual" start="27" pos="JJ" orth="LowerCase" length="9" end="36" ck_ot="ADJ"/>
+<token s_id="s_6" type="pobj" t_id="t_7" string="dictionaries" stem="dictionaries" start="37" pos="NNS" orth="LowerCase" length="12" end="49" ck_ot="NOUN"/>
+<token s_id="s_6" type="advcl" t_id="t_8" string="is" stem="is" start="50" pos="VBZ" orth="LowerCase" length="2" end="52" ck_ot="VERB"/>
+<token s_id="s_6" type="det" t_id="t_9" string="a" stem="a" start="53" pos="DT" orth="LowerCase" length="1" end="54" ck_ot="DET"/>
+<token s_id="s_6" type="amod" t_id="t_10" string="quadratic" stem="quadratic" start="55" pos="JJ" orth="LowerCase" length="9" end="64" ck_ot="ADJ"/>
+<token s_id="s_6" type="attr" t_id="t_11" string="function" stem="function" start="65" pos="NN" orth="LowerCase" length="8" end="73" ck_ot="NOUN"/>
+<token s_id="s_6" type="prep" t_id="t_12" string="of" stem="of" start="74" pos="IN" orth="LowerCase" length="2" end="76" ck_ot="ADP"/>
+<token s_id="s_6" type="det" t_id="t_13" string="the" stem="the" start="77" pos="DT" orth="LowerCase" length="3" end="80" ck_ot="DET"/>
+<token s_id="s_6" type="pobj" t_id="t_14" string="number" stem="number" start="81" pos="NN" orth="LowerCase" length="6" end="87" ck_ot="NOUN"/>
+<token s_id="s_6" type="prep" t_id="t_15" string="of" stem="of" start="88" pos="IN" orth="LowerCase" length="2" end="90" ck_ot="ADP"/>
+<token s_id="s_6" type="pobj" t_id="t_16" string="languages" stem="languages" start="91" pos="NNS" orth="LowerCase" length="9" end="100" ck_ot="NOUN"/>
+<token s_id="s_6" type="acl" t_id="t_17" string="considered" stem="considered" start="101" pos="VBN" orth="LowerCase" length="10" end="111" ck_ot="VERB"/>
+<token s_id="s_6" type="punct" t_id="t_18" string="," stem="," start="111" pos="," orth="LowerCase" length="1" end="112" ck_ot="PUNCT"/>
+<token s_id="s_6" type="nsubj" t_id="t_19" string="we" stem="we" start="113" pos="PRP" orth="LowerCase" length="2" end="115" ck_ot="PRON"/>
+<token s_id="s_6" type="aux" t_id="t_20" string="will" stem="will" start="116" pos="MD" orth="LowerCase" length="4" end="120" ck_ot="VERB"/>
+<token s_id="s_6" type="ROOT" t_id="t_21" string="face" stem="face" start="121" pos="VB" orth="LowerCase" length="4" end="125" ck_ot="VERB"/>
+<token s_id="s_6" type="det" t_id="t_22" string="the" stem="the" start="126" pos="DT" orth="LowerCase" length="3" end="129" ck_ot="DET"/>
+<token s_id="s_6" type="dobj" t_id="t_23" string="problem" stem="problem" start="130" pos="NN" orth="LowerCase" length="7" end="137" ck_ot="NOUN"/>
+<token s_id="s_6" type="prep" t_id="t_24" string="of" stem="of" start="138" pos="IN" orth="LowerCase" length="2" end="140" ck_ot="ADP"/>
+<token s_id="s_6" type="pcomp" t_id="t_25" string="getting" stem="getting" start="141" pos="VBG" orth="LowerCase" length="7" end="148" ck_ot="VERB"/>
+<token s_id="s_6" type="det" t_id="t_26" string="a" stem="a" start="149" pos="DT" orth="LowerCase" length="1" end="150" ck_ot="DET"/>
+<token s_id="s_6" type="amod" t_id="t_27" string="large" stem="large" start="151" pos="JJ" orth="LowerCase" length="5" end="156" ck_ot="ADJ"/>
+<token s_id="s_6" type="dobj" t_id="t_28" string="number" stem="number" start="157" pos="NN" orth="LowerCase" length="6" end="163" ck_ot="NOUN"/>
+<token s_id="s_6" type="prep" t_id="t_29" string="of" stem="of" start="164" pos="IN" orth="LowerCase" length="2" end="166" ck_ot="ADP"/>
+<token s_id="s_6" type="pobj" t_id="t_30" string="dictionaries" stem="dictionaries" start="167" pos="NNS" orth="LowerCase" length="12" end="179" ck_ot="NOUN"/>
+<token s_id="s_6" type="punct" t_id="t_31" string="." stem="." start="179" pos="." orth="LowerCase" length="1" end="180" ck_ot="PUNCT"/>
+
+<chunkings>
+<chunkig text="the number" s_id="6" type="np" ck_id="1" >
+<tokens>
+<token t_id="t_2" string="the"/>
+<token t_id="t_3" string="number"/>
+</tokens>
+</chunking>
+<chunkig text="necessary bilingual dictionaries" s_id="6" type="vp" ck_id="2" >
+<tokens>
+<token t_id="t_5" string="necessary"/>
+<token t_id="t_6" string="bilingual"/>
+<token t_id="t_7" string="dictionaries"/>
+</tokens>
+</chunking>
+<chunkig text="a quadratic function" s_id="6" type="vp" ck_id="3" >
+<tokens>
+<token t_id="t_9" string="a"/>
+<token t_id="t_10" string="quadratic"/>
+<token t_id="t_11" string="function"/>
+</tokens>
+</chunking>
+<chunkig text="the number" s_id="6" type="vp" ck_id="4" >
+<tokens>
+<token t_id="t_2" string="the"/>
+<token t_id="t_3" string="number"/>
+</tokens>
+</chunking>
+<chunkig text="languages" s_id="6" type="vp" ck_id="5" >
+<tokens>
+<token t_id="t_9" string="languages"/>
+</tokens>
+</chunking>
+<chunkig text="we" s_id="6" type="np" ck_id="6" >
+<tokens>
+<token t_id="t_19" string="we"/>
+</tokens>
+</chunking>
+<chunkig text="the problem" s_id="6" type="vp" ck_id="7" >
+<tokens>
+<token t_id="t_2" string="the"/>
+<token t_id="t_13" string="problem"/>
+</tokens>
+</chunking>
+<chunkig text="a large number" s_id="6" type="vp" ck_id="8" >
+<tokens>
+<token t_id="t_3" string="a"/>
+<token t_id="t_9" string="large"/>
+<token t_id="t_14" string="number"/>
+</tokens>
+</chunking>
+<chunkig text="dictionaries" s_id="6" type="vp" ck_id="9" >
+<tokens>
+<token t_id="t_7" string="dictionaries"/>
+</tokens>
+</chunking>
+</chunkings>
+</sentence>
+</sentences>
+
+</doc>
