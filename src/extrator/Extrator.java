@@ -27,6 +27,7 @@ public class Extrator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		QuantidadeInfos qtdInfo = new QuantidadeInfos();
 		String caminhos[] = new String[NUMERO_FERRAMENTAS + 1];
 		
 		//crie arquivos para cada ferramenta em pastas separadas
@@ -116,10 +117,10 @@ public class Extrator {
 
 				switch(i) {
 				case 0:
-					s = segmentacaoStanford(resultado[0]);
+					s = segmentacaoStanford(resultado[0], qtdInfo);
 					break;
 				case 1:
-					segmentacaoSpacy(resultado[1], s);
+					segmentacaoSpacy(resultado[1], s, qtdInfo);
 					break;
 				default:
 				}
@@ -130,7 +131,7 @@ public class Extrator {
 			System.out.println(documento);
 			
 			try {
-				fw = new FileWriter(new File(caminhos[NUMERO_FERRAMENTAS] + nomeArquivo + ".xml"));
+				fw = new FileWriter(new File(caminhos[NUMERO_FERRAMENTAS] + nomeArquivo.replace(".txt", "") + ".xml"));
 				bw = new BufferedWriter(fw);
 				bw.write(documento);
 				bw.flush();
@@ -168,13 +169,15 @@ public class Extrator {
 		return t.toArray(new String[t.size()]);
 	}
 	
-	public static void segmentacaoSpacy(String texto, List<Sentenca> s) {
+	public static void segmentacaoSpacy(String texto, List<Sentenca> s, QuantidadeInfos qi) {
 		texto = texto.replace("ï»¿", "");
 		String[] sentencas = texto.split("\\Q)\\E  ");
 		String[] tokens;
 		String[] chunking;
 		
-		List<Chunk> chunkList;
+		int qtdTokens = 0;
+		int ultimoIndice = 0;
+		List<Chunk> chunkList = null;
 		Token t = null;
 		Chunk c = null;
 		
@@ -191,28 +194,41 @@ public class Extrator {
 					chunking = tokens[tokens.length - 1].split("\\Q) (\\E");
 					for (int k = 0; k < chunking.length; k++) {
 						c = new Chunk();
-						c.setIdChunking(Integer.toString(k+1));
+						c.setIdChunking(Integer.toString(qi.getQuantidadeChunks() + k + 1));
 						c.setIdSentenca(Integer.toString(i+1));
 						String st = chunking[k].split("u\\Q'\\E")[1];
 						st = st.replace("\', ", "").trim();
+						int qtdTokensChunk = 0;
+						int tamChunk = st.split(" ").length;
 						c.setTexto(st);
+						c.setHead(chunking[k].split("u\\Q'\\E")[2].replace("\', ", ""));
 						c.setTipo(chunking[k].split("u\\Q'\\E")[3]);
+						c.setAnt(chunking[k].split("u\\Q'\\E")[4].replace("\', ", ""));
 						
 						for (int l = 0; l < tokens.length - 1; l++) {
-							if (st.contains(s.get(i).getTokens().get(l).getTexto())) {
-								c.addIndice(l+1);
+							if (st.contains(s.get(i).getTokens().get(l).getTexto()) 
+									&& ((qtdTokens + l + 1) >= ultimoIndice))
+									 {
+								qtdTokensChunk++;
+								if(qtdTokensChunk > tamChunk) {
+									break;
+								}
+								ultimoIndice = qtdTokens + l + 1;
+								c.addIndice(ultimoIndice);
 							}
 						}
 						chunkList.add(c);
 					}
+					qi.setQuantidadeChunks(qi.getQuantidadeChunks() + chunkList.size());
 					
 				}				
 			}
+			qtdTokens += tokens.length - 1; //-1 pois o último token na verdade é conjunto dos chunks
 			s.get(i).setChunks(chunkList);
 		}
 	}
 
-	public static List<Sentenca> segmentacaoStanford(String texto) {
+	public static List<Sentenca> segmentacaoStanford(String texto, QuantidadeInfos qi) {
 		List<Sentenca> sentencaList = new ArrayList<>();
 		String[] sentencas = texto.split("Sentence #\\d");
 		String frase;
@@ -220,16 +236,17 @@ public class Extrator {
 		String[] infos;
 		Sentenca s;
 		Token t;
-		List<Token> tokensList;
+		List<Token> tokensList = null;
 		for(int i = 1; i < sentencas.length; i ++) {
 			frase = sentencas[i].split("Tokens:")[0].split("tokens\\Q):\\E")[1].trim();
 			s = new Sentenca(frase);
+			s.setIdSentenca(Integer.toString(qi.getQuantidadeSentenca() + i));
 			tokens = sentencas[i].split("\\Q[\\ETex");
 			tokensList = new ArrayList<>();
 
 			for (int j = 1; j < tokens.length; j++) {
 				infos = tokens[j].split(" ");
-				t = new Token(Integer.toString(i), Integer.toString(j));
+				t = new Token(s.getIdSentenca(), Integer.toString(qi.getQuantidadeTokens() + j));
 				t.setTexto(infos[0].split("=")[1].trim());
 				t.setCharOffsetBegin(infos[1].split("=")[1].trim());
 				t.setCharOffsetEnd(infos[2].split("=")[1].trim());
@@ -240,8 +257,11 @@ public class Extrator {
 			}
 
 			s.setTokens(tokensList);
+			qi.setQuantidadeTokens(qi.getQuantidadeTokens() + tokensList.size());
 			sentencaList.add(s);
 		}
+		
+		qi.setQuantidadeSentenca(qi.getQuantidadeSentenca() + sentencaList.size());
 		return sentencaList;
 	}
 
@@ -254,8 +274,7 @@ public class Extrator {
 		String textoIntermediario = "";
 		String sentenca;
 		for (int i = 0 ; i < s.size(); i++) {
-			sentenca = "<sentence text=\"" + s.get(i).getTexto() + "\" s_id=\"" + (i+1) + 
-					"\" has_ne=\"" + "TEM DE VER COMO PEGAR ESSA INFO DEPOIS" + "\">\n";
+			sentenca = s.get(i).toString();
 			for (int j = 0; j < s.get(i).getTokens().size(); j++) {
 				sentenca += s.get(i).getTokens().get(j).toString();
 			}	
