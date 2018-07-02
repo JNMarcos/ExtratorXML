@@ -14,7 +14,7 @@ public class Chunk {
 	private String texto;
 	private String tipo;
 	private String head;
-	private String ant;
+	private String ant;//antecessor
 	private String idSentenca;
 	private String idChunking;
 	private List<Integer> indicesTokens = new ArrayList<>();
@@ -69,7 +69,7 @@ public class Chunk {
 		} else tipo = "vp";
 		
 		String chunk =  "<chunkig text=\"" + texto + "\" head=\"" + head + "\" s_id=\"" + idSentenca + "\" type=\"" +
-				tipo + "\" ck_id=\"" + idChunking + "\" ant=\"" + ant + "\" >\n<tokens>\n";
+				tipo + "\" ck_id=\"" + idChunking + "\" pred=\"" + ant + "\" >\n<tokens>\n";
 		String[] tokens = texto.split(" ");
 		String t = "";
 		for(int i = 0; i < tokens.length; i++) {
