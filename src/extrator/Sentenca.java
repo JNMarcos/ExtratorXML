@@ -10,15 +10,24 @@ import java.util.List;
  *
  */
 public class Sentenca {
+	private String idSentenca;
 	private String texto;
 	private List<Token> tokens;
 	private List<Chunk> chunks;
+	private boolean hasNe;
 	
 	public Sentenca(String texto) {
 		super();
 		this.texto = texto;
 	}
 	
+
+	public String getIdSentenca() {
+		return idSentenca;
+	}
+	public void setIdSentenca(String idSentenca) {
+		this.idSentenca = idSentenca;
+	}
 	public String getTexto() {
 		return texto;
 	}
@@ -30,6 +39,7 @@ public class Sentenca {
 	}
 	public void setTokens(List<Token> tokens) {
 		this.tokens = tokens;
+		verificarSeTemNE();
 	}
 	
 	public List<Chunk> getChunks() {
@@ -38,6 +48,23 @@ public class Sentenca {
 
 	public void setChunks(List<Chunk> chunks) {
 		this.chunks = chunks;
+	}
+	public boolean isHasNe() {
+		return hasNe;
+	}
+	public void setHasNe(boolean hasNe) {
+		this.hasNe = hasNe;
+	}
+
+	//verifica se tem entidade nomeada
+	private void verificarSeTemNE() {
+		setHasNe(false);
+		for (int i = 0; i < tokens.size(); i++) {
+			if (!tokens.get(i).getNER().equals("O")) {
+				setHasNe(true);
+				break;
+			}
+		}
 	}
 
 	@Override
@@ -71,7 +98,8 @@ public class Sentenca {
 	}
 	@Override
 	public String toString() {
-		return "Sentenca [texto=" + texto + ", tokens=" + tokens + "]";
+		return "<sentence text=\"" + texto + "\" s_id=\"" + idSentenca + 
+				"\" has_ne=\"" + Boolean.toString(hasNe) + "\">\n";
 	}
 	
 	
