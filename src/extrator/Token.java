@@ -17,7 +17,8 @@ public class Token {
 	private String lema;
 	private String NER;
 	private String ckOt;
-	private String tipo = "";	
+	private String tipo = "";
+	private String supertipo = "";
 	
 
 	public Token(String idSentenca, String idToken) {
@@ -84,6 +85,7 @@ public class Token {
 	}
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+		definirSupertipo(tipo);
 	}
 	
 	
@@ -122,13 +124,32 @@ public class Token {
 			return false;
 		return true;
 	}
+	
+	private void definirSupertipo(String tipo) {
+		if (tipo.equals("punct")) {
+			supertipo = "SYMB";
+		} else if (tipo.equals("number")) {
+			supertipo = "NUM";
+		} else {
+			supertipo = "WORD";
+		}
+	}
 	//retorna 
 	@Override
 	public String toString() {
-		String orth = Character.isUpperCase(texto.charAt(0))? "UpperInitial":"LowerCase";
-		return "<token s_id=\"s_" + idSentenca + "\" type=\"" + tipo + "\" t_id=\"t_" + idToken + "\" string=\"" 
+		String orth;
+		String ckOt;
+		if (supertipo != "WORD") {
+			orth = "null";
+			ckOt = "";
+		} else {
+			orth = Character.isUpperCase(texto.charAt(0))? "UpperInitial":"LowerCase";
+			ckOt = "\" ck_ot=\"" + this.ckOt; 
+		}
+		
+		return "<token s_id=\"s_" + idSentenca + "\" super_type=\"" + supertipo +"\" type=\"" + tipo + "\" t_id=\"t_" + idToken + "\" string=\"" 
 			+ texto + "\" stem=\"" + texto.toLowerCase() + "\" start=\"" + charOffsetBegin + "\" pos=\"" + POS + "\" orth=\"" + orth +
-			"\" length=\"" + texto.length() + "\" end=\"" + charOffsetEnd + "\" ck_ot=\"" + ckOt + "\"/>\n";
+			"\" length=\"" + texto.length() + "\" end=\"" + charOffsetEnd + ckOt + "\"/>\n";
 	}
 	
 	
