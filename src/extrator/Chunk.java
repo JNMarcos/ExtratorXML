@@ -13,6 +13,8 @@ import java.util.List;
 public class Chunk {
 	private String texto;
 	private String tipo;
+	private String head;
+	private String ant;
 	private String idSentenca;
 	private String idChunking;
 	private List<Integer> indicesTokens = new ArrayList<>();
@@ -45,6 +47,20 @@ public class Chunk {
 	public void setIdChunking(String idChunking) {
 		this.idChunking = idChunking;
 	}
+	public String getHead() {
+		return head;
+	}
+
+	public void setHead(String head) {
+		this.head = head;
+	}
+	public String getAnt() {
+		return ant;
+	}
+	public void setAnt(String ant) {
+		this.ant = ant;
+	}
+
 	@Override
 	public String toString() {
 		String tipo;
@@ -52,8 +68,8 @@ public class Chunk {
 			tipo = "np";
 		} else tipo = "vp";
 		
-		String chunk =  "<chunkig text=\"" + texto + "\" s_id=\"" + idSentenca + "\" type=\"" +
-				tipo + "\" ck_id=\"" + idChunking + "\" >\n<tokens>\n";
+		String chunk =  "<chunkig text=\"" + texto + "\" head=\"" + head + "\" s_id=\"" + idSentenca + "\" type=\"" +
+				tipo + "\" ck_id=\"" + idChunking + "\" ant=\"" + ant + "\" >\n<tokens>\n";
 		String[] tokens = texto.split(" ");
 		String t = "";
 		for(int i = 0; i < tokens.length; i++) {
